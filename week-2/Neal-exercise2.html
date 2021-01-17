@@ -1,0 +1,57 @@
+<!--; Title: Assignment 2.2
+; Author: Professor Krasso
+; Date 17 January 2021
+; Modified By: Jourdan Neal
+; Description: JavaScript alert from button click, calling functions from elements ID's. 
+=====================================================
+*/-->
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+
+    <!--Title *needed on all assignments*-->
+    <title>WEB 231 – Enterprise JavaScript I</title>
+
+    <!--Link to Stylesheet-->
+    <link rel="stylesheet" href="/Users/jjjet/OneDrive/Desktop/buwebdev/web-231/site.css">
+    
+    <!--Link for Google Fonts-->
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div id="container">
+    <h1>Exercise 2.2- Hello JavaScript</h1>
+
+    <!--Button-what class am I taking? -->
+    <button id ="btnMyCourse" onclick = "classMsg()">
+      What course am I taking?
+    </button>  
+
+    <br/>
+    <!--txt my world paragraph-->
+    <p id="txtMyWorld"></p>
+  
+    <!--Return button linked to HTML Landing Page, styled in CSS-->
+    <a class= "return-home" href="/Users/jjjet/OneDrive/Desktop/buwebdev/web-231/index.html">Return</a>
+  </div>
+
+  <!--Adding JavaScript-->
+  <script>
+
+    //function to create alert window when button is pushed
+    function classMsg(){
+    alert ("WEB 231 – Enterprise JavaScript I");
+    }
+
+    //set last name to Neal
+    let yourlastName = "Neal";
+    
+    /*giving txtMyWorld string, will show when txtMyWorld is called and add last name in string of txt*/
+    document.getElementById("txtMyWorld").innerHTML = "You are now in " + yourlastName+ "'s world";
+  </Script>
+</body>
+</html> 

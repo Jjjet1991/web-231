@@ -2,7 +2,7 @@
 =====================================================
 ; Title: Assignment 1.3
 ; Author: Professor Krasso
-; Date 9 January 2021
+; Date 17 January 2021
 ; Modified By: Jourdan Neal
 ; Description: Initial CSS for Landing.
 =====================================================
@@ -17,6 +17,10 @@ html, body {
     margin-top: 50px;
     margin-left: 100px;
     margin-right: 100px;
+}
+
+h1 {
+    text-align: center;    
 }
 
 h1,h2,h3,h4 {
@@ -58,4 +62,8 @@ a:active {
 .return-home:active {
     color:#3C275A;
 
+}
+
+#LudwigHRInfo, #JohannHRInfo, #WolfgangHRInfo{
+    border: dotted 1px red;
 }
