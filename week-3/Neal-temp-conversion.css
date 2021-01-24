@@ -1,0 +1,22 @@
+/*; Title: Assignment 3.2
+; Author: Professor Krasso
+; Date 24 January 2021
+; Modified By: Jourdan Neal
+; Description: Temp-conversion using JavaScript, additional css styling from assignment 3. 
+=====================================================
+*/
+html,body {
+  font-family: "Oswald", Verdana, Arial, sans-serif;
+  text-align:center;
+  
+}
+
+.app-header, #celsiusValue {
+    font-size:28px;
+    text-align:center;
+}
+
+.return-home {
+    margin-right:550px;
+}
+
