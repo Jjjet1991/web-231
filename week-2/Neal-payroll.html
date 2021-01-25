@@ -29,7 +29,7 @@
     <div id="container">
       <h1 id=payroll-header>Payroll System</h1>
 
-        <!--Employee 1 Record-->
+        <!--Employee 1 record, name ,address, hire date, pay rate.-->
       <h3>Employee Record 1</h3>
         <!--unordered list *5 items*-->
       <ul id="LudwigHRInfo">
@@ -40,7 +40,7 @@
         <li id="txtPayRate1"></li>
       </ul>
       
-      <!--Employee 2 Record-->
+      <!--Employee 2 record, name, address, hire date, pay rate. -->
       <h3>Employee Record 2</h3>
       <!--unordered list *5 items*-->
       <ul id="JohannHRInfo">
@@ -51,7 +51,7 @@
         <li id="txtPayRate2"></li>
       </ul>
 
-      <!--Employee 3 Record-->
+      <!--Employee 3 record, name, address, hire date, pay rate.-->
       <h3>Employee Record 3</h3>
       <!--unordered list *5 items*-->
       <ul id="WolfgangHRInfo">
@@ -69,39 +69,70 @@
     <!--Add JavaScript-->
     <script>
 
-        //variables for first names
-        let txtFirstName1 = document.getElementById("txtFirstName1").innerHTML = "Ludwig";
-        let txtFirstName2 = document.getElementById("txtFirstName2").innerHTML = "Johann";
-        let txtFirstName3 = document.getElementById("txtFirstName3").innerHTML = "Wolfgang";
+      //Will return Ludwig as employee 1 first name. 
+      const empl1Name = "Ludwig"
+      document.getElementById("txtFirstName1")
+      .innerHTML = empl1Name;
+      //Will return Johann as employee 2 first name. 
+      const empl2Name = "johann"
+      document.getElementById("txtFirstName2")
+      .innerHTML = empl2Name;
+      //Wil return Wolfgang as employee 3 first name.
+      const empl3Name = "Wolfgang"
+      document.getElementById("txtFirstName3")
+      .innerHTML = empl3Name;
 
-        //variables for last names
-        let txtLastName1 = document.getElementById("txtLastName1").innerHTML = "Beethoven";
-        let txtLastName2 = document.getElementById("txtLastName2").innerHTML = "Bach";
-        let txtLastName3 = document.getElementById("txtLastName3").innerHTML = "Mozart";
+      //Will return Beethoven as employee 1 last name 
+      const empl1LastName = "Beethoven"
+      document.getElementById("txtLastName1")
+      .innerHTML = empl1LastName;
+      //Will return Bach as employee 2 last name. 
+      const empl2LastName = "Bach"
+      document.getElementById("txtLastName2")
+      .innerHTML = empl2LastName;
+      //Will return Mozart as employee 3 last name. 
+      const empl3LastName = "Mozart"
+      document.getElementById("txtLastName3")
+      .innerHTML = empl3LastName;
 
-        //variables for addresses
-        let txtAddress1 = document.getElementById("txtAddress1").innerHTML = "505 main street";
-        let txtAddress2 = document.getElementById("txtAddress2").innerHTML = "512 main street";
-        let txtAddress3 = document.getElementById("txtAddress3").innerHTML = "600 main street";
+      //Const (empl address) will return under txtAddress1, 2, and 3. 
+      const empl1Address = "505 main street"
+      document.getElementById("txtAddress1")
+      .innerHTML = empl1Address;
+      const empl2Address = "512 main street"
+      document.getElementById("txtAddress2")
+      .innerHTML = empl2Address;
+      const empl3Address = "600 main street"
+      document.getElementById("txtAddress3")
+      .innerHTML = empl3Address; 
 
-        //Hire Date variables
-        const hireDate1= new Date(2020, 11, 9);
+      //Hire Date variables--will show date as MM, DD, YYYY.
+      const hireDate1= new Date(2020, 11, 9);
 
-        //Applying Date format to const hire date variables
-        let txtHireDate1 = document.getElementById("txtHireDate1").innerHTML = hireDate1.toLocaleDateString("en-US");
-        let txtHireDate2 = document.getElementById("txtHireDate2").innerHTML = hireDate1.toLocaleDateString("en-US");
-        let txtHireDate3 = document.getElementById("txtHireDate3").innerHTML = hireDate1.toLocaleDateString("en-US");
+      //Applying Date format to const hire date variables
+      let txtHireDate1 = document.getElementById("txtHireDate1")
+      .innerHTML = hireDate1.toLocaleDateString("en-US");
+
+      let txtHireDate2 = document.getElementById("txtHireDate2")
+      .innerHTML = hireDate1.toLocaleDateString("en-US");
+
+      let txtHireDate3 = document.getElementById("txtHireDate3")
+      .innerHTML = hireDate1.toLocaleDateString("en-US"); 
 
 
-        //Rate of Pay for each empl
-        const payRate1= 18.9321;
-        const payRate2= 25.4568;
-        const payRate3= 50.0568;
 
-        //Rounding pay rate to fixed decimal position and putting in txt
-        let txtPayRate1 = document.getElementById("txtPayRate1").innerHTML = payRate1.toFixed(1);
-        let txtPayRate2 = document.getElementById("txtPayRate2").innerHTML = payRate2.toFixed(1);
-        let txtPayRate3 = document.getElementById("txtPayRate3").innerHTML = payRate3.toFixed(1);
+      //Rate of Pay for each employee-const variable.
+      const payRate1= 18.9321;
+      const payRate2= 25.4568;
+      const payRate3= 50.0568;
+
+      //Rounding pay rate to fixed decimal position and putting in txt under empl 1, 2, 3.
+      let txtPayRate1 = document.getElementById("txtPayRate1")
+      .innerHTML = payRate1.toFixed(1);
+      let txtPayRate2 = document.getElementById("txtPayRate2")
+      .innerHTML = payRate2.toFixed(1);
+      let txtPayRate3 = document.getElementById("txtPayRate3")
+      .innerHTML = payRate3.toFixed(1);
     </script>
 </body>
 </html>
