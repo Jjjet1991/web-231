@@ -5,17 +5,19 @@
 ; Description: Temp-conversion using JavaScript, additional css styling from assignment 3. 
 =====================================================
 */
+
+/* Body font and text-alignment.*/
 html,body {
   font-family: "Oswald", Verdana, Arial, sans-serif;
   text-align:center;
   
 }
-
+/*Font size and text alignment for return celsius value and app-header*/
 .app-header, #celsiusValue {
     font-size:28px;
     text-align:center;
 }
-
+/*Moving return home link to line up with edge of form.*/
 .return-home {
     margin-right:550px;
 }
