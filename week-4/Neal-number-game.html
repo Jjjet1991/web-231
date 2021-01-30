@@ -1,0 +1,93 @@
+<!--; Title: Assignment 4.2
+; Author: Professor Krasso
+; Date 31 January 2021
+; Modified By: Jourdan Neal
+; Description: Number game, user number compared to random number between 1 and 10. 
+=====================================================
+*/-->
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+
+  <!--Title *needed on all assignments.*-->
+  <title>WEB 231 – Enterprise JavaScript I</title>
+
+  <!--Link to Global Stylesheet.-->
+  <link rel="stylesheet" href="../global.css" />
+  <link rel="stylesheet" href=".../site.css">
+
+  <!--Link to assignment stylesheet.-->
+  <link rel="stylesheet" href="Neal-number-game.css" />
+
+  <!--Link for Google Fonts.-->
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <div class="container">
+    <!--Main app header.-->
+    <div class="app-header">Welcome to the numbers game!</div>
+
+    <div class="card">
+      <div class="card-title">Pick a number between 1 and 10</div>
+      <div class="card-content">
+        <div class="form">
+          <!--Number input box.-->
+          <div class="form-field">
+            <label for="txtMyNumber">Guess the number.</label>
+            <input type="text" class="input" id="txtMyNumber" name="userNumber" />
+          </div>
+
+          <!--Button to submit user number guess.-->
+          <div class="form-field">
+            <button class="btn btn-primary full-width" id="btnSubmit" onclick="guess()">Submit</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <br />
+
+    <!--This will be the box showing if user was correct with their guess.-->
+    <div id="form-results-number">
+      <div class="card">
+        <div class="card-title">Results</div>
+
+        <!--Card displaying conversion results.-->
+        <div class="card-content" id="results"></div>
+      </div>
+      <br/>
+      <a class="return-home" href="../index.html">Return</a>
+    </div>
+  </div>
+
+  <!--Adding Javascript for number picks-->
+  <script>
+    function guess() {
+      const rnd = Math.floor(Math.random() * 10 + 1); //Generate random number between 1-10.    
+
+      //Capture inputted value and assign to value of MyNumber.//
+      const myNumber = document.getElementById("txtMyNumber").value;
+
+      //myNumber is greater than the rnd (random number).
+      if (myNumber > rnd) {
+        document.getElementById('results')
+          .innerHTML = 'The number is less than ' + myNumber + '.'; //Returns "Number less than (number)."
+
+        //myNumber is less than the rnd. 
+      } else if (myNumber < rnd) {
+        document.getElementById('results')
+          .innerHTML = 'The number is greater than ' + myNumber + '.'; //Returns "Number greater than."
+      } else {
+        document.getElementById('results')
+          .innerHTML = 'Congratulations! You picked the correct number!'; //Returns "Congrats-correct number."
+      };
+    }
+  </script>
+</body>
+
+</html>

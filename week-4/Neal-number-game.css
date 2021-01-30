@@ -1,0 +1,21 @@
+/*; Title: Assignment 4.2
+; Author: Professor Krasso
+; Date 31 January 2021
+; Modified By: Jourdan Neal
+; Description: Number Game using JavaScript, additional css styling from assignment 4. 
+=====================================================
+*/
+
+html, body {
+    font-family: "Oswald", Verdana, Arial, sans-serif;
+}
+/*Style for the app-header and the result display.*/
+.app-header, #results{
+    font-size:28px;
+    text-align:center;
+}
+
+/*Placement of return home button, align with bottom of results card.*/
+.return-home{
+    margin-left:30%;
+}
