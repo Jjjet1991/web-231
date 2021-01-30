@@ -13,7 +13,7 @@ html, body {
     font-family: "Oswald", Verdana, Arial, sans-serif;
 }
 
-/**Style for container that everything is entered in*/
+/**Style for container that everything is entered in.*/
 #container {
     margin-top: 50px;
     margin-left: 100px;
