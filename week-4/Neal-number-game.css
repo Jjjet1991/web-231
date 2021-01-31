@@ -17,7 +17,12 @@ html, body {
 
 /*Placement of return home button, align with bottom of results card.*/
 .return-home{
+<<<<<<< HEAD
     float:left;
     margin-left: 450px;
 
 }
+=======
+    margin-right:600px;
+}
+>>>>>>> 3bfb75911a32869f9e44e47fc7aa701863ee62bf
