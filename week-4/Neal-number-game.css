@@ -14,3 +14,11 @@ html, body {
     font-size:28px;
     text-align:center;
 }
+<<<<<<< HEAD
+=======
+
+/*Placement of return home button, align with bottom of results card.*/
+.return-home{
+    margin-left: 850px;
+}
+>>>>>>> 0f7389ef1f1e7ab92280f9543ebfef35739f2572
