@@ -68,8 +68,13 @@
   <!--Adding Javascript for number picks-->
   <script>
     
-      const rnd = Math.floor(Math.random() * 10 + 1); //Generate random number between 1-10.    
+      const rnd = Math.floor(Math.random() * 10 + 1); //Generate random number between 1-10. 
+
+      /*changed the function so that it does not include the random number-now the random number
+      is selected upon refreshing the page, and you can actually guess more than once without changing 
+      the number every try*/   
       function guess() {
+        
       //Capture inputted value and assign to value of MyNumber.//
       const myNumber = document.getElementById("txtMyNumber").value;
 

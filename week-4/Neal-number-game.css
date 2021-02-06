@@ -16,5 +16,5 @@ html, body {
 }
 /*Moving return home link to line up with edge of form.*/
 .return-home {
-    margin-left:450px;
+    position: absolute;
 }
