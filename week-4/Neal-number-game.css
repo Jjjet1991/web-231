@@ -14,7 +14,13 @@ html, body {
     font-size:28px;
     text-align:center;
 }
+
+#form-results-number {
+    text-align: center;
+}
+
 /*Moving return home link to line up with edge of form.*/
 .return-home {
-    position: absolute;
+    margin-right:550px;
 }
+
