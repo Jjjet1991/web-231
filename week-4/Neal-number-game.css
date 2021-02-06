@@ -14,7 +14,7 @@ html, body {
     font-size:28px;
     text-align:center;
 }
-
+/*Centered form-results-number to that child anchor tag (return) would also center*/
 #form-results-number {
     text-align: center;
 }
