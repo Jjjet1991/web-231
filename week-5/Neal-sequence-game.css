@@ -9,6 +9,16 @@
 html, body {
     font-family: "Oswald", Verdana, Arial, sans-serif;
 }
+
+/*Values copied from input for new class drop-down-menu.*/
+.drop-down-menu {
+    padding: 12px 20px;
+    margin: 8px 0px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
 /*Style for the app-header and the result display.*/
 .app-header, #results{
     font-size:28px;
@@ -23,4 +33,3 @@ html, body {
 .return-home {
     margin-right:550px;
 }
-

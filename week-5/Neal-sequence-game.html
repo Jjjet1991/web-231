@@ -1,0 +1,146 @@
+<!--; Title: Assignment 4.2
+; Author: Professor Krasso
+; Date 31 January 2021
+; Modified By: Jourdan Neal
+; Description: Number game, user number compared to random number between 1 and 10. 
+=====================================================
+*/-->
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+
+  <!--Title *needed on all assignments.*-->
+  <title>WEB 231 – Enterprise JavaScript I</title>
+
+  <!--Link to Global Stylesheet.-->
+  <link rel="stylesheet" href="../global.css" />
+
+  <!--Link to assignment stylesheet.-->
+  <link rel="stylesheet" href="Neal-sequence-game.css" />
+
+  <!--Link for Google Fonts.-->
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <div class="container">
+    <!--Main app header.-->
+    <div class="app-header">Welcome to the sequence game!</div>
+
+    <div class="card">
+      <div class="card-title">Sequence Selection Form</div>
+      <div class="card-content">
+        <div class="form">
+          <!--Drop-down-box with four options.-->
+          <div class="form-field">
+            <label>Choose a number sequence: </label>
+            <select class="drop-down-menu" id="sequence" name="sequences">
+              <option value="select">--Select--</option>
+              <option value="fibonacci">Fibonacci Sequence</option>
+              <option value="even">Even Numbers</option>
+              <option value="odd">Odd Numbers</option>
+            </select>
+          </div>
+
+          <!--Submit button.-->
+          <div class="form-field">
+            <button class="btn btn-primary full-width" id="btnDisplaySequence" onclick="guess()">Display Sequence</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--Number Sequence display.-->
+    <div id="form-results-number">
+      <div class="card">
+        <div class="card-title">Sequence Results</div>
+
+        <!--Display number sequence based on user choice.-->
+        <div class="card-content" id="results"></div>
+      </div>
+      <!--Moved return home anchor tag so it is a child of the form-results-number.-->
+      <div>
+        <br />
+        <a class="return-home" href="../index.html">Return</a>
+      </div>
+    </div>
+  </div>
+
+  <!--JavaScript Elements.-->
+  <script>
+    //Registers the onclick event.   
+    function guess() {
+
+      //Capture value from select list.//
+      const choice = document.getElementById("sequence").value;
+
+      //Define num1, num2, next, variables. 
+      let num1;
+      let num2;
+      let next;
+
+      //Fibonacci sequence selection.
+      if (choice =="fibonacci") {
+
+        let fibonacciSequenceText = "";
+        let num1 = 0;
+        let num2 = 1;
+
+        //While statement with stopping condition of 40. 
+         while (num1 < 40) {
+          fibonacciSequenceText += num1 + ", ";
+          next = num1 + num2; //output 0 + 1
+          num1 = num2; // num1 becomes value of num2.
+          num2 = next; //num2 now is next (0,1,1, etc.)
+          //Bind to results card.
+          document.getElementById("results")
+            .innerHTML = fibonacciSequenceText.slice(0, -2)
+        }
+
+        //Even Number Sequence selection.
+      } else if (choice == "even") {
+        //Empty sting for evenSequenceText.
+        let evenSequenceText = "";
+        //Define num1 and num2 and next.
+        let num1 = 0;
+        let num2 = 1;
+        let next;
+
+        do {
+          evenSequenceText += num1 + ", ";
+          next = num1 + 2;//Output 0 + 2
+          num1 = next;//Output will increase by 2 each loop.
+        } while (num1 < 20);//Stopping condition at 20.
+        document.getElementById("results")
+          .innerHTML = evenSequenceText.slice(0, -2)//Add results to results card.
+
+        //Choose Odd Number Sequence
+      } else if (choice == "odd") {
+          let oddSequenceText="";
+          let num1;
+          for (let num1 = 1; num1 < 20; num1++) {
+            if (num1 % 2 !== 0);
+            oddSequenceText += num1 + ", ";
+        }
+        //Bind output of odd number sequence to results card.
+        document.getElementById("results")
+          .innerHTML = oddSequenceText.slice(0, -2)
+          //If select is chosen.
+      } else if ( choice == "select") {
+        window.alert('Invalid selection, please try again!');//Alert window invalid selection.
+      }
+   
+
+    }
+  </script>
+
+
+
+
+</body>
+
+</html>
