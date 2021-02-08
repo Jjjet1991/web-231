@@ -79,19 +79,19 @@
       const choice = document.getElementById("sequence").value;
 
       //Define num1, num2, next, variables. 
-      let num1;
+
       let num2;
       let next;
 
       //Fibonacci sequence selection.
-      if (choice =="fibonacci") {
+      if (choice == "fibonacci") {
 
         let fibonacciSequenceText = "";
         let num1 = 0;
         let num2 = 1;
 
         //While statement with stopping condition of 40. 
-         while (num1 < 40) {
+        while (num1 < 40) {
           fibonacciSequenceText += num1 + ", ";
           next = num1 + num2; //output 0 + 1
           num1 = num2; // num1 becomes value of num2.
@@ -112,34 +112,31 @@
 
         do {
           evenSequenceText += num1 + ", ";
-          next = num1 + 2;//Output 0 + 2
-          num1 = next;//Output will increase by 2 each loop.
-        } while (num1 < 20);//Stopping condition at 20.
+          next = num1 + 2; //Output 0 + 2
+          num1 = next; //Output will increase by 2 each loop.
+        } while (num1 < 20); //Stopping condition at 20.
         document.getElementById("results")
-          .innerHTML = evenSequenceText.slice(0, -2)//Add results to results card.
+          .innerHTML = evenSequenceText.slice(0, -2) //Add results to results card.
 
         //Choose Odd Number Sequence
       } else if (choice == "odd") {
-          let oddSequenceText="";
-          let num1;
-          for (let num1 = 1; num1 < 20; num1++) {
-            if (num1 % 2 !== 0);
+        let oddSequenceText = "";
+        let num1;
+     
+        for (let num1 = 1; num1 < 20; num1++) {//Sequence of numbers 1-20.
+          if (num1 % 2 !== 0) {//Remove even numbers from sequence.
             oddSequenceText += num1 + ", ";
+          }
         }
         //Bind output of odd number sequence to results card.
         document.getElementById("results")
           .innerHTML = oddSequenceText.slice(0, -2)
-          //If select is chosen.
-      } else if ( choice == "select") {
-        window.alert('Invalid selection, please try again!');//Alert window invalid selection.
+        //If select is chosen.
+      } else if (choice == "select") {
+        window.alert('Invalid selection, please try again!'); //Alert window invalid selection.
       }
-   
-
     }
   </script>
-
-
-
 
 </body>
 
