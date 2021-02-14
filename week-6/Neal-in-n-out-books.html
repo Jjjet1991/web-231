@@ -50,50 +50,50 @@
             <button class="btn btn-primary full-width" id="btnDisplayListing" onclick="userSelect()">Display Listing</button>
           </div>
         </div>
-        
+
       </div>
-      </div>
-      <br/>
-      <a class="return-home" href="../index.html">Return</a>
     </div>
+    <br />
+    <a class="return-home" href="../index.html">Return</a>
+  </div>
 
 
 
-    <!--Card for Top 3 Favorite Books -->
-    <div class="card" id="favorite-books">
-      <div class="card-title">Top 3 Favorite Books</div>
-      <div class="card-content">
-        <table class=table>
+  <!--Card for Top 3 Favorite Books -->
+  <div class="card" id="favorite-books">
+    <div class="card-title">Top 3 Favorite Books</div>
+    <div class="card-content">
+      <table class=table>
+        <tr>
+          <!--Row of headers.-->
+          <th>ISBN</th>
+          <th>Title</th>
+          <th>Pages</th>
+        </tr>
+        <tbody>
           <tr>
-            <!--Row of headers.-->
-            <th>ISBN</th>
-            <th>Title</th>
-            <th>Pages</th>
+            <!--Favorite book 1, rows for ISBN, Title, Pages.-->
+            <td id="txtGrapesOfWrathISBN"></td>
+            <td id="txtGrapesOfWrathTitle"></td>
+            <td id="txtGrapesOfWrathPages"></td>
           </tr>
-          <tbody>
-            <tr>
-              <!--Favorite book 1, rows for ISBN, Title, Pages.-->
-              <td id="txtGrapesOfWrathISBN"></td>
-              <td id="txtGrapesOfWrathTitle"></td>
-              <td id="txtGrapesOfWrathPages"></td>
-            </tr>
-            <tr>
-              <!--Favorite book 2, rows for ISBN, Title, Pages-->
-              <td id="txtPrideAndPrejudiceISBN"></td>
-              <td id="txtPrideAndPrejudiceTitle"></td>
-              <td id="txtPrideAndPrejudicePages"></td>
-            </tr>
-            <tr>
-              <!--Favorite book 3, rows for ISBN, Title, Pages-->
-              <td id="txtOldManISBN"></td>
-              <td id="txtOldManTitle"></td>
-              <td id="txtOldManPages"></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+          <tr>
+            <!--Favorite book 2, rows for ISBN, Title, Pages-->
+            <td id="txtPrideAndPrejudiceISBN"></td>
+            <td id="txtPrideAndPrejudiceTitle"></td>
+            <td id="txtPrideAndPrejudicePages"></td>
+          </tr>
+          <tr>
+            <!--Favorite book 3, rows for ISBN, Title, Pages-->
+            <td id="txtOldManISBN"></td>
+            <td id="txtOldManTitle"></td>
+            <td id="txtOldManPages"></td>
+          </tr>
+        </tbody>
+      </table>
     </div>
- 
+  </div>
+
   <!--Card for Top 3 Favorite Authors -->
 
   <div class="card" id="favorite-authors">
@@ -144,13 +144,13 @@
 
       //If..else if...else statement.
       if (choice == "books") {
-        authors.style.display = "none";//User selection books, show books, hide authors.
+        authors.style.display = "none"; //User selection books, show books, hide authors.
         books.style.display = "block";
       } else if (choice == "authors") {
-        books.style.display = "none";//User selection authors, shows authors, hides books.
+        books.style.display = "none"; //User selection authors, shows authors, hides books.
         authors.style.display = "block";
       } else {
-        books.style.display = "none";//User selects select, hides both.
+        books.style.display = "none"; //User selects select, hides both.
         authors.style.display = "none";
       }
     };
