@@ -1,0 +1,251 @@
+<!--; Title: Assignment 6.2
+; Author: Professor Krasso
+; Date 14 February 2021
+; Modified By: Jourdan Neal
+; Description: In-N-Out Books dropdown list with JSON. 
+=====================================================
+*/-->
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+
+  <!--Title *needed on all assignments.*-->
+  <title>WEB 231 – Enterprise JavaScript I</title>
+
+  <!--Link to Global Stylesheet.-->
+  <link rel="stylesheet" href="../global.css" />
+
+  <!--Link to assignment stylesheet.-->
+  <link rel="stylesheet" href="Neal-in-n-out-books.css" />
+
+  <!--Link for Google Fonts.-->
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class="container">
+    <!--Main app header.-->
+    <div class="app-header">Welcome to In-N-Out Books</div>
+
+    <div class="card">
+      <div class="card-title">My Favorites</div>
+      <div class="card-content">
+        <div class="form">
+          <!--Drop-down-box with three options.-->
+          <div class="form-field">
+            <label>Choose a listing</label>
+            <select class="drop-down-menu" id="favoriteList" name="favorites">
+              <option value="select">--Select--</option>
+              <!--Options for dropdown menu.-->
+              <option value="books">Top 3 Favorite Books</option>
+              <option value="authors">Top 3 Favorite Authors</option>
+            </select>
+          </div>
+
+          <!--Submit button.-->
+          <div class="form-field">
+            <button class="btn btn-primary full-width" id="btnDisplayListing" onclick="userSelect()">Display Listing</button>
+          </div>
+        </div>
+        
+      </div>
+      </div>
+      <br/>
+      <a class="return-home" href="../index.html">Return</a>
+    </div>
+
+
+
+    <!--Card for Top 3 Favorite Books -->
+    <div class="card" id="favorite-books">
+      <div class="card-title">Top 3 Favorite Books</div>
+      <div class="card-content">
+        <table class=table>
+          <tr>
+            <!--Row of headers.-->
+            <th>ISBN</th>
+            <th>Title</th>
+            <th>Pages</th>
+          </tr>
+          <tbody>
+            <tr>
+              <!--Favorite book 1, rows for ISBN, Title, Pages.-->
+              <td id="txtGrapesOfWrathISBN"></td>
+              <td id="txtGrapesOfWrathTitle"></td>
+              <td id="txtGrapesOfWrathPages"></td>
+            </tr>
+            <tr>
+              <!--Favorite book 2, rows for ISBN, Title, Pages-->
+              <td id="txtPrideAndPrejudiceISBN"></td>
+              <td id="txtPrideAndPrejudiceTitle"></td>
+              <td id="txtPrideAndPrejudicePages"></td>
+            </tr>
+            <tr>
+              <!--Favorite book 3, rows for ISBN, Title, Pages-->
+              <td id="txtOldManISBN"></td>
+              <td id="txtOldManTitle"></td>
+              <td id="txtOldManPages"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+ 
+  <!--Card for Top 3 Favorite Authors -->
+
+  <div class="card" id="favorite-authors">
+    <div class="card-title">Top 3 Favorite Authors</div>
+    <div class="card-content">
+      <table class=table>
+        <tr>
+          <!--Row of headers.-->
+          <th>Name</th>
+          <th>Genre</th>
+        </tr>
+        <tbody>
+          <tr>
+            <!--Favorite author 1, name and genre.-->
+            <td id="txtSteinbeckName"></td>
+            <td id="txtSteinbeckGenre"></td>
+          </tr>
+          <tr>
+            <!--Favorite author 2, name and genre.-->
+            <td id="txtAustenName"></td>
+            <td id="txtAustenGenre"></td>
+          </tr>
+          <tr>
+            <!--Favorite author 3, name and genre.-->
+            <td id="txtHemingwayName"></td>
+            <td id="txtHemingwayGenre"></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+
+
+  <!--Adding JavaScript information.-->
+  <script>
+    //Define "books" variable as favorite-books div.
+    let books = document.getElementById("favorite-books");
+    document.getElementById("favorite-books").style.display = "none";
+
+    //Define "authors" variable as favorite-authors div.
+    let authors = document.getElementById("favorite-authors");
+    document.getElementById("favorite-authors").style.display = "none";
+
+    //Capture value of user selection.
+    function userSelect() {
+      let choice = document.getElementById("favoriteList").value;
+
+      //If..else if...else statement.
+      if (choice == "books") {
+        authors.style.display = "none";//User selection books, show books, hide authors.
+        books.style.display = "block";
+      } else if (choice == "authors") {
+        books.style.display = "none";//User selection authors, shows authors, hides books.
+        authors.style.display = "block";
+      } else {
+        books.style.display = "none";//User selects select, hides both.
+        authors.style.display = "none";
+      }
+    };
+
+    //Favorite book assigned as objects isbn, title, pages.
+    //Favorite book #1 Grapes of Wrath.
+    const favoriteBook1 = {
+      isbn: "0143039431",
+      title: "Grapes of Wrath",
+      pages: "464",
+    }
+    //Favorite book #2 Pride and Prejudice.
+    const favoriteBook2 = {
+      isbn: "1676097708",
+      title: "Pride and Prejudice",
+      pages: "182",
+    }
+    //Favorite book #3 The Old Man and the Sea.
+    const favoriteBook3 = {
+      isbn: "0684801221",
+      title: "The Old Man and the Sea",
+      pages: "128",
+    }
+    //Favorite authors assigned as object with name, genre.
+    //Favorite author #1.
+    const favoriteAuthor1 = {
+      name: "John Steinbeck",
+      genre: "Dust Bowl fiction",
+    }
+    //Favorite author #2.
+    const favoriteAuthor2 = {
+      name: "Jane Austen",
+      genre: "Romance",
+    }
+    //Favorite author #3.
+    const favoriteAuthor3 = {
+      name: "Ernest Hemingway",
+      genre: "Modernist",
+    };
+
+    //Favorite Book (Grapes) 1- Binding object items to HTML table, using each unique ID.
+    //Book 1 ISBN
+    document.getElementById("txtGrapesOfWrathISBN")
+      .innerHTML = favoriteBook1.isbn;
+    //Book 1 Title
+    document.getElementById("txtGrapesOfWrathTitle")
+      .innerHTML = favoriteBook1.title;
+    //Book 1 Pages
+    document.getElementById("txtGrapesOfWrathPages")
+      .innerHTML = favoriteBook1.pages;
+
+    //Favorite Book (Pride) 2 - Binding object items to HTML table, using each unique ID.
+    //Book 2 ISBN
+    document.getElementById("txtPrideAndPrejudiceISBN")
+      .innerHTML = favoriteBook2.isbn;
+    //Book 2 Title
+    document.getElementById("txtPrideAndPrejudiceTitle")
+      .innerHTML = favoriteBook2.title;
+    //Book 2 Pages
+    document.getElementById("txtPrideAndPrejudicePages")
+      .innerHTML = favoriteBook2.pages;
+
+    //Favorite Book (OldMan) 3 - Binding object items to HTML table, using each unique ID.
+    //Book 3 ISBN
+    document.getElementById("txtOldManISBN")
+      .innerHTML = favoriteBook3.isbn;
+    //Book 3 Title
+    document.getElementById("txtOldManTitle")
+      .innerHTML = favoriteBook3.title;
+    //Book 3 Pages
+    document.getElementById("txtOldManPages")
+      .innerHTML = favoriteBook3.pages;
+
+    //Favorite Author 1- Binding object items Name and Genre to HTML table. 
+    //Author 1 Name
+    document.getElementById("txtSteinbeckName")
+      .innerHTML = favoriteAuthor1.name;
+    //Author 1 Genre
+    document.getElementById("txtSteinbeckGenre")
+      .innerHTML = favoriteAuthor1.genre;
+    //Favorite Author 2- Binding object items Name and Genre to HTML table. 
+    //Author 2 Name
+    document.getElementById("txtAustenName")
+      .innerHTML = favoriteAuthor2.name;
+    //Author 2 Genre
+    document.getElementById("txtAustenGenre")
+      .innerHTML = favoriteAuthor2.genre;
+    //Favorite Author 3- Binding object items Name and Genre to HTML table. 
+    //Author 3 Name
+    document.getElementById("txtHemingwayName")
+      .innerHTML = favoriteAuthor3.name;
+    //Author 3 Genre
+    document.getElementById("txtHemingwayGenre")
+      .innerHTML = favoriteAuthor3.genre;
+  </script>
+</body>
+
+</html>

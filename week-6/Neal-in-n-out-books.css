@@ -1,0 +1,61 @@
+/*; Title: Assignment 6.2
+; Author: Professor Krasso
+; Date  14 February 2021
+; Modified By: Jourdan Neal
+; Description: Favorite books/authors drop down menu to table. 
+=====================================================
+*/
+
+html, body {
+    font-family: "Oswald", Verdana, Arial, sans-serif;
+}
+
+/*Values copied from input for new class drop-down-menu.*/
+.drop-down-menu {
+    padding: 12px 20px;
+    margin: 8px 0px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+/*Style for the app-header and the result display.*/
+.app-header, #results{
+    font-size:28px;
+    text-align:center;
+}
+/*Centered form-results-number to that child anchor tag (return) would also center*/
+#form-results-number {
+    text-align: center;
+}
+
+/*Moving return home link to line up with edge of form.*/
+.return-home {
+    margin-right:550px;
+}
+
+/*Styling for table: collapsed border, width and margin.*/
+table {
+    width:100%;
+    border-collapse:collapse;
+    margin-bottom: 30px;
+}
+/*Styling for table header, padding, txt align, txt and background color.*/
+th {
+    padding-top:12px;
+    padding-bottom:12px;
+    text-align: left;
+    background-color: #4F3674;
+    color:white;
+}
+
+th,td {
+    border: 1px solid darkgoldenrod;
+    padding-top: 9px; 
+    padding-bottom:9px;
+    padding-left:9px;
+}
+
+.return-home {
+    margin-left:470px;
+}
