@@ -32,7 +32,7 @@ html, body {
 
 /*Moving return home link to line up with edge of form.*/
 .return-home {
-    margin-right:30.5%;
+    margin-left:30.5%;
 }
 
 /*Styling for table: collapsed border, width and margin.*/
