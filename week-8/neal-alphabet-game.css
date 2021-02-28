@@ -1,0 +1,31 @@
+/*; Title: Assignment 8.2
+; Author: Professor Krasso
+; Date 28 February 2021
+; Modified By: Jourdan Neal
+; Description: Alphabet game. 
+=====================================================
+*/
+
+html, body {
+    font-family: "Oswald", Verdana, Arial, sans-serif;
+}
+/*Style for the app-header and the result display.*/
+.app-header, #results{
+    font-size:28px;
+    text-align:center;
+}
+/*Centered form-results-number to that child anchor tag (return) would also center*/
+#form-results-number {
+    text-align: center;
+}
+/*Return a-tag positioning*/
+.return-home{
+position: absolute;
+margin-left:30.5%;
+}
+/*Text-align for alphabet list and results card.*/
+#full-alphabet, #alphabet-letter {
+    text-align: center;
+    font-size:28px;
+
+}
