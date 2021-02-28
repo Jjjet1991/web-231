@@ -19,10 +19,12 @@ html, body {
     text-align: center;
 }
 /*Return a-tag positioning*/
-.return-home{
-position: absolute;
-margin-left:30.5%;
+.return-home {
+    position: static;
+    margin-left: 30.5%;
+    
 }
+
 /*Text-align for alphabet list and results card.*/
 #full-alphabet, #alphabet-letter {
     text-align: center;
