@@ -1,8 +1,8 @@
-/*; Title: Assignment 8.2
+/*; Title: Assignment 9.2
 ; Author: Professor Krasso
-; Date 28 February 2021
+; Date 7 March 2021
 ; Modified By: Jourdan Neal
-; Description: Alphabet game pick a letter and returns number position in alphabet. 
+; Description: Final card game. 
 =====================================================
 */
 
@@ -25,14 +25,15 @@ html, body {
     
 }
 
-/*Text-align for alphabet list and results card.*/
-#full-alphabet, #alphabet-letter {
+/*Center text for player-card*/
+.player-card {
     text-align: center;
-    font-size:28px;
-
 }
 
-#player-card {
-    text-align: center;
-
+/*four colums, display grid, 10 px padding and grid-gap.*/
+#player-card-container {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    padding: 10px;
+    grid-gap: 10px 10px;
 }
