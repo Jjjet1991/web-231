@@ -30,7 +30,7 @@ html, body {
     text-align: center;
 }
 
-/*four colums, display grid, 10 px padding and grid-gap.*/
+/*four columns, display grid, 10 px padding and grid-gap.*/
 #player-card-container {
     display: grid;
     grid-template-columns: auto auto auto auto;

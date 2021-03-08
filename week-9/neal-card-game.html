@@ -2,145 +2,142 @@
 ; Author: Professor Krasso
 ; Date 7 March 2021
 ; Modified By: Jourdan Neal
-; Description: Card Game. 
+; Description: Card Game 9.2. 
 =====================================================
 ;W3 Schools JavaScript Array
 ;Author: W3Schools.com
 =====================================================
+;
+;
 */-->
 
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
-<head>
-  <meta charset="utf-8">
+  <head>
+    <meta charset="utf-8">
 
-  <!--Title *needed on all assignments.*-->
-  <title>WEB 231 – Enterprise JavaScript I</title>
+    <!--Title *needed on all assignments.*-->
+    <title>WEB 231 – Enterprise JavaScript I</title>
 
-  <!--Link to Global Stylesheet.-->
-  <link rel="stylesheet" href="../global.css" />
+    <!--Link to Global Stylesheet.-->
+    <link rel="stylesheet" href="../global.css" />
 
-  <!--Link to assignment stylesheet.-->
-  <link rel="stylesheet" href="neal-card-game.css" />
+    <!--Link to assignment stylesheet.-->
+    <link rel="stylesheet" href="neal-card-game.css" />
 
-  <!--Link for Google Fonts.-->
-  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="//cdn.materialdesignicons.com/5.4.55/css/materialdesignicons.min.css">
+    <!--Link for Google Fonts.-->
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href='https://cdn.jsdelivr.net/npm/@mdi/font@5.9.55/css/materialdesignicons.min.css' rel='Stylesheet'>
 
-</head>
+  </head>
 
-<body>
-  <div class="container">
-        <div class="app-header">Welcome to the Card Game!</div>
-        <!--Card for Card Dealer and Deal Cards button.-->
-        <div class="card">
-          <div class="card-title">Card Dealer</div>
-          <div class="card-content">
-              </div>
-              <!--Deal Cards button.-->
-              <div class="form-field">
-                <button class="btn btn-primary full-width" id= "btnDealCards">Deal Cards</button>
-              </div>
-            </div>
-          </div>
-        
-        <!--Return home link to index.html.-->
-        <br/>
+  <body>
+    <div class="container">
+      <div class="app-header">Welcome to the Card Game!</div>
+      <!--Card for Card Dealer and Deal Cards button.-->
+      <div class="card">
+        <div class="card-title">Card Dealer</div>
+        <div class="card-content">
+        </div>
+        <!--Deal Cards button.-->
+        <div class="form-field">
+          <button class="btn btn-primary full-width" id="btnDealCards">Deal Cards</button>
+        </div>
+      </div>
+    
 
-  <div class="card">
+    <!--Return home link to index.html.-->
+    <br />
+    <a class="return-home" href="../index.html">Return</a>
+</div>
+
+    <div class="card">
       <div class="card-title"> Shuffled Cards</div>
       <div id="player-card-container"></div>
     </div>
 
-  
 
-<script >
-//Create Card class with parameters face, suit.
+
+<script>
+    //Card class w/ parameters.
 class Card {
-	constructor(faces, suits) {
-		this.faces = faces;
-		this.suits = suits;
-	}
+    constructor(faces, suits){
+    this.faces= faces;
+    this.suits = suits;
 }
-
-//Define CARD_COUNT as value: 52
-const CARD_COUNT = 52;
-//Empty array to put constructed cards into.
-let cards = [];
-//Create array of four suits.
-let suits = ["Hearts", "Diamonds", "Spades", "Clubs"];
-//Create array of 13 faces.
-let faces = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"];
-
-/*Create getDeckOfCards function, use variable counter as index, iterate through
- loop 52 (CARD-COUNTER) times, increasing by 1 each loop.*/
-function getDeckOfCards() {
-	for (let count = 0; count < this.CARD_COUNT; count++) {
-		//Create new card with new face and suit as the loop runs.
-		this.cards[count] = new Card(this.faces[count % 13], this.suits[Math.floor(count / 13)]);
-	}
 }
-//Create a shuffle function, no parameters.
-function shuffle() {
-
-	//Create loop for shuffle function to iterate 52 times, use first card as iteration variable.
-	for (let firstCard = 0; firstCard < this.CARD_COUNT; firstCard++) {
-		let secondCard = Math.floor(Math.random() * this.CARD_COUNT);
-
-		//Set tempCard equal to first card in the cards array.
-		let tempCard = this.cards[firstCard];
-		//Re-order the cards.
-		this.cards[firstCard] = this.cards[secondCard];
-		//Re-order the cards.
-		this.cards[secondCard] = tempCard
-    }
-    this.cardOutput();
-}
-
-//Create function buildPlayingCard w/ 4 parameters.
-function buildPlayingCard(cardFace, suitIcon, faceColor, suitColor) {
-//Return divs with specified styling.
-return `<div class= "card player-card"> 
-<div class="card-title"; text-align:left; font-size:20px; padding-left:10px; style="color: ${faceColor}>${cardFace}</div>
-<div class= "card-content"; font-size: 28px; padding-bottom: 25px>
-<span class= "${suitIcon}" style="color: ${suitColor}></span></div></div>`;
-}
-//Create new function
-function cardOutput() {
-	//Empty string for cardOutputWithIcon.
-	let cardOutputWithIcon = "";
-	//For of loop looping through face cards.
-	this.cards.forEach((card) =>{            
-			//Switch statement for suit to compare w/ string array.
-			switch (cards.suits) {
-				case "Hearts": //If Hearts- output mdi-heart, red and red.
-					cardOutputWithIcon += buildPlayingCard(card.faces, "mdi-cards-heart", "red", "red");
-					break;
-				case "Diamonds": //If Diamonds.....
-					cardOutputWithIcon += buildPlayingCard(card.faces, "mdi-cards-diamond", "red", "red");
-					break;
-				case "Clubs":
-					cardOutputWithIcon += buildPlayingCard(card.faces, "mdi-cards-club", "black", "black");
-					break;
-				case "Spades":
-					cardOutputWithIcon += buildPlayingCard(card.faces, "mdi-cards-spade", "black", "black");
-            }
-        });
-        //binding card output with Icon to player card container.
-            document.getElementById("player-card-container").innerHTML = cardOutPutWithIcon;
-    }
-    //Create Dealer class w/o constructor.
+//Dealer class.
 class Dealer {
-	constructor() {
-		//Call getDeckOfCards in body of the class constructor.
-		getDeckOfCards();
-	}
-}
-        document.getElementById("btnDealCards").onclick = function(){
-        new Dealer(), shuffle();
-}
+    constructor(){
 
+        this.getDeckOfCards();
+    }
+    //Define CARD_COUNT as value: 52
+	CARD_COUNT = 52;
+	//Empty array to put constructed cards into.
+    cards =[];
+	//Create array of 13 faces.
+	faces = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"];
+	//Create array of four suits.
+	suits = ["hearts", "diamonds", "spades", "clubs"];
+
+    getDeckOfCards() {
+        for (let count = 0; count < this.CARD_COUNT; count++) {
+                this.cards[count] = new Card(this.faces[count % 13], this.suits[Math.floor(count / 13)]);
+            }
+		}
+
+    	shuffle() {
+			let secondCard, tempCard;
+			//Create loop for shuffle function to iterate 52 times, use first card as iteration variable.
+			for (let firstCard = 0; firstCard < this.CARD_COUNT; firstCard++) {
+				secondCard = Math.floor(Math.random() * this.CARD_COUNT);
+
+				//Set tempCard equal to first card in the cards array.
+				tempCard = this.cards[firstCard];
+				//Re-order the cards.
+				this.cards[firstCard] = this.cards[secondCard];
+				//Re-order the cards.
+				this.cards[secondCard] = tempCard
+			}
+			this.cardOutput();
+		}
+        buildPlayingCard(cardFace, suitIcon, faceColor, suitColor) {
+            return `<div class='card player-card' style='width:100%'>
+                        <div class='card-title' style='color: ${faceColor}; font-size: 20px; padding-left: 10px; text-align: left;'>
+                            ${card.face}
+                        </div>
+                        <div class='card-content' style='font-size: 28px; padding-bottom: 25px;'>
+                            <span style='color: ${suitColor}' class='${suitIcon}'></span>
+                        </div>    
+                    </div> `;
+        }
+
+        cardOutput() {
+            //cardOutputWithIcon set to empty string;
+            let cardOutputWithIcon = '';
+            this.cards.forEach((card)=>{
+                switch(cards.suits) {
+                    case "hearts": //If Hearts- output mdi-heart, red and red.
+                        cardOutputWithIcon += this.buildPlayingCard(card.faces, "mdi mdi-cards-heart", "red", "red");
+                        break;
+                    case "diamonds": //If Diamonds.....
+                        cardOutputWithIcon += this.buildPlayingCard(card.faces, "mdi mdi-cards-diamond", "red", "red");
+                        break;
+                    case "spades":
+                        cardOutputWithIcon += this.buildPlayingCard(card.faces, "mdi mdi-cards-club", "black", "black");
+                        break;
+                    case "clubs":
+                        cardOutputWithIcon += this.buildPlayingCard(card.faces, "mdi mdi-cards-spade", "black", "black");
+                }})
+                document.getElementById("player-card-container").innerHTML = cardOutputWithIcon;
+            }
+}
+//Onclick function set to btn click. 
+document.getElementById("btnDealCards").onclick = function() {
+    new Dealer().shuffle()
+    };
 </script>
 </body>
 </html>
