@@ -6,6 +6,8 @@
 =====================================================
 */
 
+
+
 html, body {
     font-family: "Oswald", Verdana, Arial, sans-serif;
 }
@@ -14,10 +16,7 @@ html, body {
     font-size:28px;
     text-align:center;
 }
-/*Centered form-results-number to that child anchor tag (return) would also center*/
-#form-results-number {
-    text-align: center;
-}
+
 /*Return a-tag positioning*/
 .return-home {
     position: static;
@@ -25,15 +24,15 @@ html, body {
     
 }
 
-/*Center text for player-card*/
-.player-card {
+#player-card-container {
+display:grid;
+grid-template-columns: auto auto auto auto;
+padding: 10px;
+grid-gap: 10px 10px;
+margin-left: 5px;
+}
+
+.player-card{
     text-align: center;
 }
 
-/*four columns, display grid, 10 px padding and grid-gap.*/
-#player-card-container {
-    display: grid;
-    grid-template-columns: auto auto auto auto;
-    padding: 10px;
-    grid-gap: 10px 10px;
-}

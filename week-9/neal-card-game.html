@@ -54,90 +54,73 @@
 
     <div class="card">
       <div class="card-title"> Shuffled Cards</div>
-      <div id="player-card-container"></div>
+      <div class="card-content" id ="player-card-container"></div>
     </div>
 
 
 
-<script>
-    //Card class w/ parameters.
-class Card {
-    constructor(faces, suits){
-    this.faces= faces;
-    this.suits = suits;
-}
-}
-//Dealer class.
-class Dealer {
-    constructor(){
-
-        this.getDeckOfCards();
-    }
-    //Define CARD_COUNT as value: 52
-	CARD_COUNT = 52;
-	//Empty array to put constructed cards into.
-    cards =[];
-	//Create array of 13 faces.
-	faces = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"];
-	//Create array of four suits.
-	suits = ["hearts", "diamonds", "spades", "clubs"];
-
-    getDeckOfCards() {
-        for (let count = 0; count < this.CARD_COUNT; count++) {
-                this.cards[count] = new Card(this.faces[count % 13], this.suits[Math.floor(count / 13)]);
+    <script>
+        class Card {
+            constructor(face, suit){
+                this.face = face;
+                this.suit = suit;
             }
-		}
-
-    	shuffle() {
-			let secondCard, tempCard;
-			//Create loop for shuffle function to iterate 52 times, use first card as iteration variable.
-			for (let firstCard = 0; firstCard < this.CARD_COUNT; firstCard++) {
-				secondCard = Math.floor(Math.random() * this.CARD_COUNT);
-
-				//Set tempCard equal to first card in the cards array.
-				tempCard = this.cards[firstCard];
-				//Re-order the cards.
-				this.cards[firstCard] = this.cards[secondCard];
-				//Re-order the cards.
-				this.cards[secondCard] = tempCard
-			}
-			this.cardOutput();
-		}
-        buildPlayingCard(cardFace, suitIcon, faceColor, suitColor) {
-            return `<div class='card player-card' style='width:100%'>
-                        <div class='card-title' style='color: ${faceColor}; font-size: 20px; padding-left: 10px; text-align: left;'>
-                            ${card.face}
-                        </div>
-                        <div class='card-content' style='font-size: 28px; padding-bottom: 25px;'>
-                            <span style='color: ${suitColor}' class='${suitIcon}'></span>
-                        </div>    
-                    </div> `;
         }
 
-        cardOutput() {
-            //cardOutputWithIcon set to empty string;
-            let cardOutputWithIcon = '';
-            this.cards.forEach((card)=>{
-                switch(cards.suits) {
-                    case "hearts": //If Hearts- output mdi-heart, red and red.
-                        cardOutputWithIcon += this.buildPlayingCard(card.faces, "mdi mdi-cards-heart", "red", "red");
-                        break;
-                    case "diamonds": //If Diamonds.....
-                        cardOutputWithIcon += this.buildPlayingCard(card.faces, "mdi mdi-cards-diamond", "red", "red");
-                        break;
-                    case "spades":
-                        cardOutputWithIcon += this.buildPlayingCard(card.faces, "mdi mdi-cards-club", "black", "black");
-                        break;
-                    case "clubs":
-                        cardOutputWithIcon += this.buildPlayingCard(card.faces, "mdi mdi-cards-spade", "black", "black");
-                }})
-                document.getElementById("player-card-container").innerHTML = cardOutputWithIcon;
+        class Dealer {
+               CARD_COUNT = 52;
+                cards = [];
+                faces = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"];
+                suits = ["Hearts", "Diamonds", "Clubs", "Spades"];
+            constructor(){
+                this.getDeckOfCards (); }
+
+                getDeckOfCards(){
+                    for (let count = 0; count < this.CARD_COUNT; count++){
+                        this.cards [count] = new Card (this.faces[count % 13], this.suits[Math.floor(count / 13)]);
+                    }
+                }
+                shuffle(){
+                    for (let firstCard = 0; firstCard < this.CARD_COUNT; firstCard++){
+                        let secondCard = Math.floor(Math.random () * this.CARD_COUNT);
+
+                        let tempCard = this.cards[firstCard];
+                        this.cards[firstCard]= this.cards[secondCard]
+                        this.cards[secondCard] = tempCard;
+                    }
+                }
+
             }
-}
-//Onclick function set to btn click. 
-document.getElementById("btnDealCards").onclick = function() {
-    new Dealer().shuffle()
-    };
-</script>
+            function buildPlayingCard(card, suitIcon, faceColor, suitColor){
+                return `<div class="card player-card" style="width:100%"><div class="card-title" style= "text-align: left;
+                    font-size:20px; padding-left:10px; color: ${faceColor}">${card.face}</div>
+                    <div class="card-content" style="font-size:28px; padding-bottom:25px;"><span class=
+                        "${suitIcon}" style="color: ${suitColor}"></span></div></div>`
+            }
+            document.getElementById ("btnDealCards").onclick = function(){
+                let dealer = new Dealer();
+                dealer.shuffle();
+                let cardOutputWithIcon = "";
+            for (const card of dealer.cards){
+                switch (card.suit){
+                    case "Hearts":
+                        cardOutputWithIcon += buildPlayingCard(card, "mdi mdi-cards-heart", "red", "red")
+                        break;
+                    case "Diamonds":
+                        cardOutputWithIcon += buildPlayingCard(card, "mdi mdi-cards-diamond", "red", "red")
+                        break;
+                    case "Clubs":
+                        cardOutputWithIcon += buildPlayingCard(card, "mdi mdi-cards-club", "black", "black")
+                        break;
+                    case "Spades":
+                        cardOutputWithIcon += buildPlayingCard(card, "mdi mdi-cards-spade", "black", "black")
+                        break;
+                }
+            }
+            document.getElementById("player-card-container").innerHTML= cardOutputWithIcon;
+            }
+
+
+    </script>
 </body>
 </html>
